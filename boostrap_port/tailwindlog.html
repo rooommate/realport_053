@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Length Check</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+</head>
+<body class="">
+    <style>
+ body{
+        height: 100vh;
+background-image: url('download.png');
+      }
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+
+
+<div class=" min-h-screen bg-base-200 pt-5">
+    <div class="hero-content flex-col md:flex-row lg:flex-row bg-gray-500    rounded-lg">
+      <img src="pp.jpg" class="h-min-screen max-w-sm rounded-lg shadow-2xl" />
+      <div>
+        <form id="loginForm" class="bg-white  mt-10px block m-auto  shadow-2xl p-10 w-80  rounded-t-2xl " onsubmit="validateForm()">
+            <label for="username" class="">Username:</label>
+            <input type="text" id="username" name="username" placeholder="username" class="rounded-lg" required><br><br>
+        <div id="errorLabel1" class="error" style="display:none;">Password must be at least 8 characters long.</div>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="rounded-lg" placeholder="password" required><br><br>
+        <div id="errorLabel" class="error" style="display:none;" >Password must be at least 8 characters long.</div>
+    
+            <input type="submit" value="Login" class="btn btn-primary block mx-auto text-green-500 ">
+        </form>
+      </div>
+    </div>
+  </div>
+  
+   
+
+    <script>
+        function validateForm() {
+            let password = document.getElementById('password').value;
+            let user=document.getElementById('username').value;
+            if (password.length < 8 ) {
+                document.getElementById('errorLabel').style.display = 'block';
+                event.preventDefault(); // prevent form submission
+            }if (user.length < 8) {
+                document.getElementById('errorLabel1').style.display = 'block';
+                event.preventDefault(); // prevent form submission
+            }else{
+                alert("adam your finish");
+            }
+        }
+        </SCript>
+    </BODy>
+</html>
